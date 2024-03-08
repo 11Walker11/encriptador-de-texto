@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Challenge Encriptador</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Honk&family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <main>
+            
+            <h1>Encriptador de texto</h1>
+
+            <section class="formulario-1">
+                <textarea class="encriptar-texto" id="encriptar-texto" cols="70" rows="10" placeholder="Ingresa el texto a encriptar" required></textarea>
+
+                <div class="btn-1">
+                    <button class="encriptar" id = "encriptar" onclick="btnEncriptar()">Cifrar</button>
+                    <button class="desencriptar" id="desencriptar" onclick="btnDesencripatar()" disabled>Descifrar</button>
+                </div>
+                
+            </section>
+            
+            <section class="formulario-2">
+                <textarea class="desencripar-texto" id="desencripar-texto" cols="70" rows="10" placeholder="Texto encriptado"></textarea>
+
+                <div class="btn-2">
+                    <button class="copiar" onclick="copiar()">Copiar</button>
+                </div>
+            </section> 
+
+        </main>
+        <footer>
+            <p class="copyright">&copy Copyright Alan Amastal Fabian - 2024</p>
+            <p class="copyright">E-mail: alanaf201347@gmail.com</p>
+        </footer>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body>
+</html>

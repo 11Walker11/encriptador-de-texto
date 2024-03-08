@@ -1,0 +1,118 @@
+h1{
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: #f8f8f8;
+    margin: 1em auto;
+    font-family: "Bungee Spice", sans-serif;
+}
+
+body{
+    font-family: "Inconsolata", monospace;
+    background-image: url(img/fondo.png);
+}
+
+.formulario-1, .encriptar-texto, .encriptar, .copiar ,.desencriptar, .desencripar-texto{
+    font-family: "Inconsolata", monospace;
+}
+
+.encriptar-texto{
+    width: 50%;
+    height: 50%;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    font-size: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 3em auto;
+    font-weight: bold; 
+}
+
+.encriptar, .desencriptar, .copiar{
+    background-image: linear-gradient(92.88deg, #b14343 9.16%, #cc4343 43.89%, #d73f3f 64.72%);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-size: 20px;
+    font-weight: 500;
+    height: 4rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 1em;  
+}
+
+.encriptar:hover, .desencriptar:hover, .copiar:hover {
+    box-shadow: rgba(205, 63, 63, 0.5) 0 1px 30px;
+    transition-duration: .1s;
+}
+
+
+.btn-1, .btn-2{
+    display: flex;
+    justify-content: center;
+}
+
+.desencripar-texto{
+    width: 50%;
+    height: 50%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    font-size: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin: 3em auto;
+    font-weight: bold; 
+}
+
+.copyright{
+    color: #ffffff;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 2em;
+}
+/*Configuracion de panatalla para telefono (Reponsivo)*/
+@media screen and (max-width:480px){
+    h1{
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        color: #f8f8f8;
+        margin: 1em auto;
+        font-family: "Bungee Spice", sans-serif;
+    }
+
+    .formulario-1, .formulario-2, .encriptar, .desencriptar, .copiar, .copyright  {
+        width: auto;
+    }
+
+    .encriptar, .desencriptar, .copiar {
+        padding: 0 2.6rem;
+    }
+
+    .lista-diferenciales, .imagen-diferenciales{
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .encriptar, .desencriptar, .copiar {
+      padding: 0 2.6rem;
+    }
+}
