@@ -13,7 +13,7 @@ const matriz_llaves = [
 
 function btnEncriptar(){
     const miBoton = document.getElementById("desencriptar");
-    var expresionRegular = /^[a-z.?! ]+$/;
+    const expresionRegular = /^[a-z.?! ]+$/;
 
     if (expresionRegular.test(cifrar_texto.value)){
         const texto =  Cifrar(cifrar_texto.value);
