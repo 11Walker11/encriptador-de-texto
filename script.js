@@ -12,16 +12,39 @@ const matriz_llaves = [
 // FUNCIONES CIFRADO
 
 function btnEncriptar(){
-    const texto =  Cifrar(cifrar_texto.value);
     const miBoton = document.getElementById("desencriptar");
-    decifrar_texto.value = texto;
-    
-    // Verifica si el campo de texto tiene algún texto
-    if (decifrar_texto.value.trim() !== '') {
-        miBoton.disabled = false; // Habilita el botón
+    var expresionRegular = /^[a-z.?! ]+$/;
+
+    if (expresionRegular.test(cifrar_texto.value)){
+        const texto =  Cifrar(cifrar_texto.value);
+        decifrar_texto.value = texto;
+
+        //ALERTA
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "El formato es el correcto!!!!",
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+        // Verifica si el campo de texto tiene algún texto
+        if (decifrar_texto.value.trim() !== '') {
+            miBoton.disabled = false; // Habilita el botón
+        } else {
+            miBoton.disabled = true; // Deshabilita el botón si no hay texto
+        }
     } else {
-        miBoton.disabled = true; // Deshabilita el botón si no hay texto
+        Swal.fire({
+            position: "center",
+            icon: "error",
+            title: "El formato es incorrecto, solo se aceptan minusculas: " + cifrar_texto.value,
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
+
+    
 }
 
 function Cifrar(fraseCifrada){
