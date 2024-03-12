@@ -31,6 +31,7 @@ function btnEncriptar(){
         // Verifica si el campo de texto tiene algún texto
         if (decifrar_texto.value.trim() !== '') {
             miBoton.disabled = false; // Habilita el botón
+            document.getElementById('desencriptar').style.display = "block";
         } else {
             miBoton.disabled = true; // Deshabilita el botón si no hay texto
         }
