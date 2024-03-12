@@ -13,7 +13,7 @@ const matriz_llaves = [
 
 function btnEncriptar(){
     const miBoton = document.getElementById("desencriptar");
-    const expresionRegular = /^[a-z.?! ]+$/;
+    const expresionRegular = /^[a-z.?! ,]+$/;
 
     if (expresionRegular.test(cifrar_texto.value)){
         const texto =  Cifrar(cifrar_texto.value);
@@ -63,16 +63,17 @@ function Cifrar(fraseCifrada){
 // FUNCIONES DESCIFRADO
 
 function btnDesencripatar(){
-    const texto =  Descifrar(cifrar_texto.value, matriz_llaves);
+    const texto =  Descifrar(cifrar_texto.value);
     decifrar_texto.value = texto;
 }
 
-function Descifrar(fraseCifrada, matriz_llaves) {
-    for (let i = 0; i < matriz_llaves.length; i++) {
-        if (fraseCifrada.includes(matriz_llaves[i][1])) {
+function Descifrar(fraseCifrada) {
+    let matriz_llavesR =  [...matriz_llaves].reverse();
+    for (let i = 0; i < matriz_llavesR.length; i++) {
+        if (fraseCifrada.includes(matriz_llavesR[i][0])) {
             fraseCifrada = fraseCifrada.replaceAll(
-                matriz_llaves[i][1],
-                matriz_llaves[i][0]
+                matriz_llavesR[i][1],
+                matriz_llavesR[i][0]
             );
         }
     }
