@@ -14,8 +14,18 @@ const matriz_llaves = [
 function btnEncriptar(){
     const miBoton = document.getElementById("desencriptar");
     const expresionRegular = /^[a-z.?! ,]+$/;
+    
+    if(cifrar_texto.value.trim() == ''){
 
-    if (expresionRegular.test(cifrar_texto.value)){
+        Swal.fire({
+            position: "center",
+            icon: "warning",
+            title: "Ingrese una frase o palabra para poder cifrar",
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+    }else if (expresionRegular.test(cifrar_texto.value)){
         const texto =  Cifrar(cifrar_texto.value);
         decifrar_texto.value = texto;
 
@@ -28,18 +38,18 @@ function btnEncriptar(){
             timer: 1500
         });
 
-        // Verifica si el campo de texto tiene algún texto
+            // Verifica si el campo de texto tiene algún texto
         if (decifrar_texto.value.trim() !== '') {
             miBoton.disabled = false; // Habilita el botón
             document.getElementById('desencriptar').style.display = "block";
         } else {
             miBoton.disabled = true; // Deshabilita el botón si no hay texto
-        }
+            }
     } else {
         Swal.fire({
             position: "center",
             icon: "error",
-            title: "El formato es incorrecto, solo se aceptan minusculas: " + cifrar_texto.value,
+            title: "El formato es incorrecto, solo se aceptan minusculas, sin acentos: " + cifrar_texto.value,
             showConfirmButton: false,
             timer: 1500
         });
