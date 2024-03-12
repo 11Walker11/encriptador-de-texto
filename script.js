@@ -95,24 +95,35 @@ function Descifrar(fraseCifrada) {
 
 function copiar() {
     var textoResultado = document.querySelector("#desencripar-texto");
-        
-    // Selecciona el texto dentro del textarea
-    textoResultado.select();
-    textoResultado.setSelectionRange(0, 99999); // Para dispositivos móviles
+    
+    if (decifrar_texto.value.trim() == ''){
+        Swal.fire({
+            position: "center",
+            icon: "question",
+            title: 'No se ha encontrado texto para copiar...',
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }else{
+        // Selecciona el texto dentro del textarea
+        textoResultado.select();
+        textoResultado.setSelectionRange(0, 99999); // Para dispositivos móviles
 
-    // Copia el texto al portapapeles
-    document.execCommand('copy');
+        // Copia el texto al portapapeles
+        document.execCommand('copy');
 
-    // Deselecciona el texto
-    window.getSelection().removeAllRanges();
+        // Deselecciona el texto
+        window.getSelection().removeAllRanges();
 
-    //alert('Texto copiado al portapapeles: ' + textoResultado.value);
+        //alert('Texto copiado al portapapeles: ' + textoResultado.value);
 
-    Swal.fire({
-        position: "center",
-        icon: "success",
-        title: 'Texto copiado al portapapeles: ' + textoResultado.value,
-        showConfirmButton: false,
-        timer: 1500
-      });
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: 'Texto copiado al portapapeles: ' + textoResultado.value,
+            showConfirmButton: false,
+            timer: 1500
+        });
+    }
+    
 }
