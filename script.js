@@ -42,9 +42,10 @@ function btnEncriptar(){
         if (decifrar_texto.value.trim() !== '') {
             miBoton.disabled = false; // Habilita el botón
             document.getElementById('desencriptar').style.display = "block";
+            document.getElementById('alerta').style.display = "none";
         } else {
             miBoton.disabled = true; // Deshabilita el botón si no hay texto
-            }
+        }
     } else {
         Swal.fire({
             position: "center",
